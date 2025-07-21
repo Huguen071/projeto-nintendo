@@ -1,11 +1,14 @@
-import { Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, input } from '@angular/core';
+import { EventoHistorico } from '../../modelos/evento-historico';
+import { NgOptimizedImage } from '@angular/common';
 
 @Component({
   selector: 'app-card-evento',
-  imports: [],
+  imports: [NgOptimizedImage],
   templateUrl: './card-evento.component.html',
-  styleUrl: './card-evento.component.css'
+  styleUrls: ['./card-evento.component.css'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class CardEventoComponent {
-
+export class CardEventoComponente {
+  evento = input.required<EventoHistorico>();
 }

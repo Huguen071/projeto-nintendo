@@ -1,0 +1,20 @@
+<header class="cabecalho">
+  <img src="https://logodownload.org/wp-content/uploads/2017/05/nintendo-logo-7.png" alt="Logo da Nintendo" class="logo">
+</header>
+<main>
+  <section class="hero">
+    <div class="hero-conteudo">
+      <h1>A História da Nintendo</h1>
+      <p>Uma jornada através das eras de inovação e diversão.</p>
+    </div>
+  </section>
+  <section class="container-timeline">
+    <div class="timeline">
+      @for (evento of eventos(); track evento.ano; let i = $index) {
+        <div class="timeline-item" [@slideIn]="$index % 2 === 0 ? 'esquerda' : 'direita'">
+          <app-card-evento [evento]="evento" />
+        </div>
+      }
+    </div>
+  </section>
+</main>
