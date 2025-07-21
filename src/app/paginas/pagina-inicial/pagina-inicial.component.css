@@ -4,7 +4,7 @@
 
 .cabecalho {
   padding: 1rem 2rem;
-  background-color: #1a1a1a;
+  background-color: #ffffff;
   position: sticky;
   top: 0;
   z-index: 10;
@@ -20,8 +20,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  font-family: 'Press Start 2P', cursive;
   text-align: center;
-  background-image: url('https://g.co/gemini/share/8c56afaa6b26');
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
