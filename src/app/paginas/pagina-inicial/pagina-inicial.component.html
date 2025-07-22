@@ -1,8 +1,8 @@
 <header class="cabecalho">
   <head>
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha384-k6RqeWeci5ZR/Lv4MR0sA0FfDOMt23cez/3paNdF+e4z5l5a5b5d5b5d5b5d5b5d" crossorigin="anonymous">
     <link rel="stylesheet" href="./pagina-inicial.component.css">
   </head>
@@ -12,14 +12,29 @@
       <h1>A História da Nintendo</h1>
       <p>Uma jornada através das eras de inovação e diversão.</p>
     </div>
+    <main>
+  <div class="search-bar-container">
+    <input type="text" class="search-bar" placeholder="Pesquisar eventos..." [(ngModel)]="termoBusca" (input)="aplicarFiltrosEOrdenar()">
+  </div>
+</main>
   </section>
   <section class="container-timeline">
     <div class="timeline">
-      @for (evento of eventos(); track evento.ano; let i = $index) {
-        <div class="timeline-item" [@slideIn]="$index % 2 === 0 ? 'esquerda' : 'direita'">
+      @for (evento of historiaFiltrada; track evento.ano; let i = $index) {
+        <div class="timeline-item" [@slideIn]="$index % 2 === 0 ? 'esquerda' : 'direita'" (click)="selecionarEvento(evento)">
           <app-card-evento [evento]="evento" />
         </div>
       }
     </div>
   </section>
 </main>
+
+<div class="modal-overlay" *ngIf="eventoSelecionado" (click)="fecharDetalhes()">
+  <div class="modal-content" (click)="$event.stopPropagation()">
+    <button class="close-button" (click)="fecharDetalhes()">X</button>
+    <img [src]="eventoSelecionado.imagem" [alt]="eventoSelecionado.titulo" class="modal-image">
+    <h2>{{ eventoSelecionado.titulo }}</h2>
+    <p class="modal-year">{{ eventoSelecionado.ano }}</p>
+    <p>{{ eventoSelecionado.descricao }}</p>
+  </div>
+</div>
