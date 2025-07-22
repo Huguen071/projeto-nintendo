@@ -1,10 +1,17 @@
 :host {
   display: block;
+  min-height: 100vh;
+  --color1: #E60012; /* Vermelho Nintendo inicial */
+  --color2: #3c3c3c; /* Cinza escuro inicial */
+  background: linear-gradient(45deg, var(--color1), var(--color2));
+  background-attachment: fixed;
+  transition: background 0.8s ease-in-out;
+  background-size: cover;
+  background-position: center;
 }
 
 .cabecalho {
   padding: 1rem 2rem;
-  background-color: #ffffff;
   position: sticky;
   top: 0;
   z-index: 10;
@@ -34,7 +41,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(to top, rgba(26, 26, 26, 1) 20%, rgba(26, 26, 26, 0) 100%);
+ 
 }
 
 .hero-conteudo {
@@ -58,6 +65,7 @@
   padding: 4rem 2rem;
   position: relative;
   overflow-x: hidden; /* Evita a barra de rolagem horizontal durante a animação */
+
 }
 
 .container-timeline::before {
@@ -68,7 +76,7 @@
   transform: translateX(-50%);
   width: 4px;
   height: 100%;
-  background-color: #E60012;
+  background-color: #030000;
   box-shadow: 0 0 10px #E60012;
 }
 
