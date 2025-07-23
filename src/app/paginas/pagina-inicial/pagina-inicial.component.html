@@ -12,12 +12,10 @@
       <h1>A História da Nintendo</h1>
       <p>Uma jornada através das eras de inovação e diversão.</p>
     </div>
-    <main>
+  </section>
   <div class="search-bar-container">
     <input type="text" class="search-bar" placeholder="Pesquisar eventos..." [(ngModel)]="termoBusca" (input)="aplicarFiltrosEOrdenar()">
   </div>
-</main>
-  </section>
   <section class="container-timeline">
     <div class="timeline">
       @for (evento of historiaFiltrada; track evento.ano; let i = $index) {
