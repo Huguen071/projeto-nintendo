@@ -212,3 +212,20 @@
   color: #a0a0a0;
   margin-bottom: 1rem;
 }
+
+.navbar-home {
+  margin-top: 1rem;
+}
+
+.navbar-home a {
+  font-family: 'Press Start 2P', cursive;
+  text-decoration: none;
+  color: #495057;
+  margin: 0 20px;
+  font-size: 0.9rem;
+  transition: color 0.3s ease-in-out;
+}
+
+.navbar-home a:hover {
+  color: #E60012;
+}

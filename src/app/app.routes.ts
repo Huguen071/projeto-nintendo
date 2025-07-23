@@ -10,5 +10,5 @@ export const routes: Routes = [
      { path: 'home', component: HomeComponent },
      { path: 'login', component: LoginComponent },
      { path: 'pagina-inicial', component: PaginaInicialComponente },
-     { path: '', component: PaginaInicialComponente }
+     { path: 'pagina-inicial', component: PaginaInicialComponente }
 ];
