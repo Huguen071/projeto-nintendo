@@ -1,6 +1,9 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms'; // Importe o FormsModule
+import { AuthService } from '../../servicos/auth.service';
+import { User } from '../../modelos/user';
+
 
 @Component({
   selector: 'app-cadastro',
@@ -10,9 +13,16 @@ import { FormsModule } from '@angular/forms'; // Importe o FormsModule
   styleUrls: ['./cadastro.component.css']
 })
 export class CadastroComponent {
-  // Lógica do componente de cadastro aqui
+  user: User = {};
+  lgpdAccepted: boolean = false;
+
+  constructor(private authService: AuthService) {}
+
   cadastrar() {
-    // Implemente a lógica de cadastro aqui
+    if (this.user.username && this.user.email && this.user.password) {
+      this.authService.register(this.user);
+      return;
+    }
     console.log('Tentativa de cadastro');
   }
 }

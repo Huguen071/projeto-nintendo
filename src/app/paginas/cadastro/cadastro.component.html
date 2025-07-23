@@ -9,20 +9,24 @@
 <div class="cadastro-container">
   <div class="cadastro-box">
     <h2>Cadastro</h2>
-    <form (ngSubmit)="cadastrar()">
+    <form >
       <div class="input-group">
         <label for="new-username">Usuário</label>
-        <input type="text" id="new-username" name="new-username" required>
+        <input type="text" id="new-username" name="new-username" [(ngModel)]="user.username" required>
       </div>
       <div class="input-group">
         <label for="email">Email</label>
-        <input type="email" id="email" name="email" required>
+        <input type="email" id="email" name="email" [(ngModel)]="user.email" required>
       </div>
       <div class="input-group">
         <label for="new-password">Senha</label>
-        <input type="password" id="new-password" name="new-password" required>
+        <input type="password" id="new-password" name="new-password" [(ngModel)]="user.password" required>
       </div>
-      <button type="submit" class="cadastro-button">Cadastrar</button>
+      <div class="input-group-lgpd">
+        <input type="checkbox" id="lgpd" name="lgpd" [(ngModel)]="lgpdAccepted">
+        <label for="lgpd">Eu li e concordo com os <a href="/termos-de-uso" target="_blank">termos de uso e a política de privacidade</a> de acordo com a LGPD.</label>
+      </div>
+      <button type="button" (click)="cadastrar()" class="cadastro-button">Cadastrar</button>
     </form>
   </div>
 </div>
