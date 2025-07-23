@@ -22,18 +22,22 @@
 /* Barra de Navegação (PADRONIZADA COM AS OUTRAS PÁGINAS) */
 .navbar-home {
   position: absolute; /* Posição flutuante sobre o fundo */
-  top: 4rem;        /* Distância do topo */
-  left: 0;
-  right: 0;
+  top: 18rem;        /* Distância do topo */
+  left: 50%;
+  transform: translateX(-50%); /* Centraliza a navbar */
   z-index: 10;
   text-align: center;
-  padding-bottom: 1rem;
+  background-color: rgba(255, 0, 0, 0.623);
+  padding: 1rem 2rem;
+  border-radius: 15px;
+  width: fit-content; /* Faz o fundo se ajustar ao tamanho dos links */
+  box-shadow: 0 4px 15px rgb(240, 49, 49);
 }
 
 .navbar-home a {
   font-family: 'Press Start 2P', cursive;
   text-decoration: none;
-  color: #FFFFFF; /* Cor branca para bom contraste */
+  color: #ffff; /* Cor branca para bom contraste */
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Sombra para legibilidade */
   margin: 0 20px;
   font-size: 0.9rem;
@@ -48,9 +52,9 @@
 .content-wrapper {
   position: relative;
   z-index: 5;
-  color: white; /* Define a cor padrão do texto para branco */
+  color: rgb(255, 255, 255); /* Define a cor padrão do texto para branco */
   /* Adiciona um espaçamento no topo para não ficar atrás da navbar */
-  padding-top: 10rem; 
+  padding-top: 26rem; 
   padding-left: 2rem;
   padding-right: 2rem;
   padding-bottom: 4rem;
@@ -61,8 +65,21 @@
 /* ======================================= */
 
 .hero {
+  position: absolute;
+  top: 4rem; /* Distância do topo */
+  left: 0;
+  right: 0;
+  z-index: 11; /* Z-index maior para ficar na frente de tudo */
   text-align: center;
-  margin-bottom: 2rem;
+}
+
+.hero-conteudo {
+  /* ESTILOS PADRONIZADOS */
+  background-color: rgba(255, 0, 0, 0.623);
+  padding: 1.5rem 2.5rem; /* Espaçamento padronizado */
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgb(240, 49, 49);
+  display: inline-block;
 }
 
 .hero-conteudo h1 {
@@ -70,12 +87,13 @@
   font-size: 3rem;
   margin-bottom: 1rem;
   text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+  color: #ffffff;
 }
 
 .hero-conteudo p {
   font-family: 'Press Start 2P', cursive;
   font-size: 1.2rem;
-  color: #f0f0f0;
+  color: #ffffff;
   text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
 }
 
