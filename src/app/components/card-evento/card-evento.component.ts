@@ -11,4 +11,11 @@ import { NgOptimizedImage } from '@angular/common';
 })
 export class CardEventoComponente {
   evento = input.required<EventoHistorico>();
+
+  abrirImagemOriginal(): void {
+    const url = this.evento().imagem; // Pega o URL da imagem do evento
+    if (url) {
+      window.open(url, '_blank'); // Abre o URL numa nova aba do navegador
+    }
+  }
 }

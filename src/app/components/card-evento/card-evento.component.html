@@ -1,10 +1,15 @@
 @if (evento()) {
-  <div class="card">
+  <div class="card" 
+       (dblclick)="abrirImagemOriginal()" 
+       title="Dê um duplo clique para ver a imagem original">
+
     <img [ngSrc]="evento().imagem" [alt]="evento().titulo" class="card-imagem" width="300" height="200">
+    
     <div class="card-conteudo">
       <h3 class="card-titulo">{{ evento().titulo }}</h3>
       <p class="card-ano">{{ evento().ano }}</p>
       <p class="card-descricao">{{ evento().descricao }}</p>
     </div>
+    
   </div>
 }
