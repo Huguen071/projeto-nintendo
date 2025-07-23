@@ -3,11 +3,19 @@
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background: linear-gradient(45deg, var(--color1), var(--color2));
+  background-image: url('https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/d3139093-f1c4-4621-b7bc-30aeeff7178a/djhmbsb-c8262421-c7f8-4b23-8114-da7cb7b633c3.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcL2QzMTM5MDkzLWYxYzQtNDYyMS1iN2JjLTMwYWVlZmY3MTc4YVwvZGpobWJzYi1jODI2MjQyMS1jN2Y4LTRiMjMtODExNC1kYTdjYjdiNjMzYzMucG5nIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.Niksp4VzBVRY6MhBMQ8u7-TK536XH6mmn290e7Ti92Q');
+}
+
+.background-container {
+  background-image: url('https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/d3139093-f1c4-4621-b7bc-30aeeff7178a/djhmbsb-c8262421-c7f8-4b23-8114-da7cb7b633c3.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcL2QzMTM5MDkzLWYxYzQtNDYyMS1iN2JjLTMwYWVlZmY3MTc4YVwvZGpobWJzYi1jODI2MjQyMS1jN2Y4LTRiMjMtODExNC1kYTdjYjdiNjMzYzMucG5nIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.Niksp4VzBVRY6MhBMQ8u7-TK536XH6mmn290e7Ti92Q');
+  background-size: 50% !important;
+  background-position: center;
+  position: relative;
 }
 
 .login-box {
   background: #fff;
+  font-family: 'Press Start 2P', cursive;
   padding: 2rem;
   border-radius: 8px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
@@ -52,4 +60,27 @@ h2 {
 
 .login-button:hover {
   background-color: #c00;
+}
+
+.navbar-home {
+  position: absolute; /* Posiciona a navbar sobre o container */
+  top: 4rem;        /* Distância do topo (ajuste conforme necessário) */
+  left: 0;
+  right: 0;
+  z-index: 10;      /* Garante que a navbar fique na frente de outros elementos */
+  text-align: center;
+  padding-bottom: 1rem;
+}
+
+.navbar-home a {
+  font-family: 'Press Start 2P', cursive;
+  text-decoration: none;
+  color: #495057;
+  margin: 0 20px;
+  font-size: 1.25rem;
+  transition: color 0.3s ease-in-out;
+}
+
+.navbar-home a:hover {
+  color: #E60012;
 }
