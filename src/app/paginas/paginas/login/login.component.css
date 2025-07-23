@@ -84,3 +84,16 @@ h2 {
 .navbar-home a:hover {
   color: #E60012;
 }
+
+.input-group-remember {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+  font-size: 0.9em;
+}
+
+.input-group-remember label {
+  margin-left: 8px;
+  color: #666;
+  cursor: pointer;
+}

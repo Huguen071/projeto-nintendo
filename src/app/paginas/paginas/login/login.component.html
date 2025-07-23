@@ -18,6 +18,10 @@
         <label for="password">Senha</label>
         <input type="password" id="password" name="password" [(ngModel)]="user.password" required>
       </div>
+       <div class="input-group-remember">
+        <input type="checkbox" id="remember-me" name="remember-me" [(ngModel)]="rememberMe">
+        <label for="remember-me">Lembrar de mim</label>
+      </div>
       <button type="submit" class="login-button">Entrar</button>
     </form>
   </div>

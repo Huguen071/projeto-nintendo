@@ -9,11 +9,12 @@
   background-image: url('https://i.pinimg.com/736x/8b/88/36/8b88368bd67617ab39404d6cc3757926.jpg');
   background-size: cover;
   background-position: center;
+  padding-top: 6rem;
 }
 
 .cadastro-box {
   background: white;
-  padding: 2rem;
+  padding: 1.5rem;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0,0,0,0.1);
   width: 100%;
@@ -46,7 +47,7 @@
 }
 
 .cadastro-button {
-  width: 100%;
+  width: 50%;
   padding: 0.8rem;
   border: none;
   border-radius: 4px;
@@ -55,6 +56,7 @@
   font-family: 'Press Start 2P', cursive;
   cursor: pointer;
   transition: background-color 0.3s;
+  margin-top: 1rem;
 }
 
 .cadastro-button:hover {
@@ -93,3 +95,34 @@
 .input-group-lgpd label a:hover {
   text-decoration: underline;
 }
+
+/*
+  APAGUE o estilo antigo de .navbar-home que tinha o fundo cinzento
+  e SUBSTITUA por este, que é igual ao da página de login.
+*/
+
+.navbar-home {
+  position: absolute; /* Posiciona a navbar sobre o container */
+  top: 4rem;          /* Distância do topo (ajuste conforme necessário) */
+  left: 0;
+  right: 0;
+  z-index: 10;        /* Garante que a navbar fique na frente de outros elementos */
+  text-align: center;
+  padding-bottom: 1rem;
+}
+
+.navbar-home a {
+  font-family: 'Press Start 2P', cursive;
+  text-decoration: none;
+  color: #f0f2f5; /* Cor clara para contrastar com a imagem de fundo */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Sombra no texto para legibilidade */
+  margin: 0 20px;
+  font-size: 1.25rem;
+  transition: color 0.3s ease-in-out;
+}
+
+.navbar-home a:hover {
+  color: #E60012; /* Vermelho Nintendo ao passar o rato */
+}
+
+/* O resto do seu CSS de cadastro pode continuar como está */
