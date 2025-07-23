@@ -36,8 +36,12 @@
   <div class="modal-content" (click)="$event.stopPropagation()">
     <button class="close-button" (click)="fecharDetalhes()">X</button>
     <img [src]="eventoSelecionado.imagem" [alt]="eventoSelecionado.titulo" class="modal-image">
-    <h2>{{ eventoSelecionado.titulo }}</h2>
-    <p class="modal-year">{{ eventoSelecionado.ano }}</p>
-    <p>{{ eventoSelecionado.descricao }}</p>
+    
+    <div class="modal-body">
+      <h2>{{ eventoSelecionado.titulo }}</h2>
+      <p class="modal-year">{{ eventoSelecionado.ano }}</p>
+      <p>{{ eventoSelecionado.descricao }}</p>
+    </div>
+
   </div>
 </div>

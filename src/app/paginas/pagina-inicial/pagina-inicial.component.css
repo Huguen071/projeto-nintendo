@@ -151,6 +151,7 @@
   position: relative;
   width: 50%;
   box-sizing: border-box;
+  height: 480px;
 }
 
 .timeline-item:nth-child(odd) {
@@ -206,8 +207,7 @@
 }
 
 /* ======================================= */
-/* MODAL (DETALHES DO EVENTO)              */
-/* (Seus estilos originais, mantidos)    */
+/* MODAL (DETALHES DO EVENTO) - CORRIGIDO  */
 /* ======================================= */
 
 .modal-overlay {
@@ -225,12 +225,17 @@
 
 .modal-content {
   background-color: #2a2a2a;
-  padding: 2rem;
+  padding: 1rem; /* Padding ligeiramente reduzido */
   border-radius: 8px;
   max-width: 600px;
   width: 90%;
-  position: relative;
   color: #f0f0f0;
+  position: relative;
+
+  /* --- LIMITA O TAMANHO DA JANELA --- */
+  display: flex;
+  flex-direction: column;
+  max-height: 90vh; /* A janela nunca passará de 90% da altura da tela */
 }
 
 .close-button {
@@ -242,12 +247,26 @@
   color: #fff;
   font-size: 1.5rem;
   cursor: pointer;
+  z-index: 10; /* Garante que o botão de fechar fique por cima da imagem */
 }
 
 .modal-image {
   width: 100%;
-  height: auto;
+  height: 250px; /* Altura fixa para a imagem */
+  object-fit: cover;
   margin-bottom: 1rem;
+  border-radius: 4px;
+  flex-shrink: 0; /* Impede que a imagem seja esmagada */
+}
+
+/* --- ESTA É A PARTE QUE ADICIONA A BARRA DE ROLAGEM --- */
+.modal-body {
+  padding: 0 1rem 1rem 1rem; /* Adiciona padding ao redor do texto */
+  overflow-y: auto;       /* Adiciona a barra de rolagem SÓ quando necessário */
+}
+
+.modal-body h2 {
+  margin-top: 0;
 }
 
 .modal-year {
