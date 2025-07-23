@@ -8,8 +8,8 @@
     Coloque o caminho para a sua imagem de fundo aqui.
     Pode ser um gradiente ou uma imagem.
   */
-  background-image: url('https://media.karousell.com/media/photos/products/2023/12/23/pc_games_snes_collection_3000__1703319399_e979ba82_progressive');
-  background-size: 50%; /* Cobre todo o contêiner */
+  background-image: url('https://www.chromethemer.com/wallpapers/chromebook-wallpapers/images/960/super-mario-bros-chromebook-wallpaper.jpg');
+  background-size: 30%; /* Cobre todo o contêiner */
   background-position: center;
   background-attachment: fixed; /* Mantém o fundo fixo ao rolar a página */
   background-color: #1a1a1a;   /* Cor para caso a imagem não carregue */
