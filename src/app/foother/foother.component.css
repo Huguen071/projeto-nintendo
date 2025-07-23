@@ -1,0 +1,62 @@
+.site-footer {
+  background-color: #f8f9fa;
+  color: #6c757d;
+  border-top: 1px solid #e7e7e7;
+  padding: 15px 30px;
+  font-size: 0.8rem;
+  line-height: 1.5;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  z-index: 100;
+  transition: opacity 0.5s ease; /* Adiciona uma transição suave */
+}
+
+.site-footer.hidden {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;         /* Usa flexbox para alinhar os itens */
+  justify-content: space-between; /* Coloca espaço entre o texto e o botão */
+  align-items: center;   /* Centraliza os itens verticalmente */
+}
+
+.footer-text {
+  flex-grow: 1; /* Permite que o texto ocupe o espaço disponível */
+  margin-right: 20px; /* Adiciona um espaço à direita do texto */
+}
+
+.site-footer a {
+  color: #007bff;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.site-footer a:hover {
+  text-decoration: underline;
+}
+
+/* Estilo para a área de aceite */
+.footer-dismiss {
+  display: flex;
+  align-items: center;
+  white-space: nowrap; /* Impede que o texto quebre linha */
+}
+
+.footer-dismiss label {
+  margin-left: 8px;
+  cursor: pointer; /* Muda o cursor para indicar que é clicável */
+  font-weight: 500;
+  color: #343a40; /* Cor um pouco mais escura para o label */
+}
+
+.footer-dismiss input[type="checkbox"] {
+  cursor: pointer;
+  width: 16px;
+  height: 16px;
+}

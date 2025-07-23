@@ -1,0 +1,12 @@
+<footer class="site-footer" [class.hidden]="isDismissed">
+  <div class="footer-content">
+    <p>
+      Este site utiliza cookies para garantir que você obtenha a melhor experiência de navegação. Ao continuar, você concorda com nossa
+      <a href="/politica-de-privacidade" target="_blank">Política de Privacidade</a> e com os termos de uso, em conformidade com a Lei Geral de Proteção de Dados (LGPD).
+    </p>
+  </div>
+  <div class="footer-dismiss">
+      <input type="checkbox" id="dismiss-footer" (change)="dismissFooter()">
+      <label for="dismiss-footer">Ok, entendi.</label>
+    </div>
+</footer>
