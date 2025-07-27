@@ -1,21 +1,29 @@
-import { ChangeDetectionStrategy, Component, input } from '@angular/core';
+import { ChangeDetectionStrategy, Component, input, signal } from '@angular/core';
 import { EventoHistorico } from '../../modelos/evento-historico';
-import { NgOptimizedImage } from '@angular/common';
 
 @Component({
   selector: 'app-card-evento',
-  imports: [NgOptimizedImage],
+  standalone: true,
+  imports: [],
   templateUrl: './card-evento.component.html',
   styleUrls: ['./card-evento.component.css'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class CardEventoComponente {
+export class CardEventoComponent {
   evento = input.required<EventoHistorico>();
 
-  abrirImagemOriginal(): void {
-    const url = this.evento().imagem; // Pega o URL da imagem do evento
-    if (url) {
-      window.open(url, '_blank'); // Abre o URL numa nova aba do navegador
-    }
+  imagemAtualIndex = signal(0);
+
+  proximaImagem() {
+    this.imagemAtualIndex.update(
+      (i) => (i + 1) % this.evento().imagem.length
+    );
+  }
+
+  imagemAnterior() {
+    this.imagemAtualIndex.update(
+      (i) =>
+        (i - 1 + this.evento().imagem.length) % this.evento().imagem.length
+    );
   }
 }

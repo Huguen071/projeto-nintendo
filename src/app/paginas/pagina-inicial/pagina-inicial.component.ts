@@ -1,14 +1,15 @@
-import { ChangeDetectionStrategy, Component, inject, OnInit } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { DadosHistoricosService } from '../../servicos/dados-historicos.service';
+import { ChangeDetectionStrategy, Component, inject, OnInit, signal } from '@angular/core';
+import { CardEventoComponent } from '../../components/card-evento/card-evento.component';
 import { animacaoSlideIn } from '../../animacoes';
-import { CardEventoComponente } from "../../components/card-evento/card-evento.component";
 import { EventoHistorico } from '../../modelos/evento-historico';
 import { FormsModule } from '@angular/forms';
+import { DadosHistoricosService } from '../../servicos/dados-historicos.service';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-pagina-inicial',
-  imports: [CommonModule, CardEventoComponente, CardEventoComponente, FormsModule],
+  standalone: true,
+  imports: [CardEventoComponent, FormsModule, CommonModule],
   templateUrl: './pagina-inicial.component.html',
   styleUrls: ['./pagina-inicial.component.css'],
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -20,6 +21,7 @@ export class PaginaInicialComponente implements OnInit {
   historiaFiltrada: EventoHistorico[] = [];
   termoBusca: string = '';
   eventoSelecionado: EventoHistorico | null = null;
+  imagemAtualIndex = signal(0);
 
   ngOnInit(): void {
     this.todosEventos = this.dadosHistoricosService.getEventos()();
@@ -42,9 +44,28 @@ export class PaginaInicialComponente implements OnInit {
 
   selecionarEvento(evento: EventoHistorico): void {
     this.eventoSelecionado = evento;
+    this.imagemAtualIndex.set(0);
   }
 
   fecharDetalhes(): void {
     this.eventoSelecionado = null;
+  }
+
+  proximaImagem() {
+    if (this.eventoSelecionado) {
+      this.imagemAtualIndex.update(
+        (i) => (i + 1) % this.eventoSelecionado!.imagem.length
+      );
+    }
+  }
+
+  imagemAnterior() {
+    if (this.eventoSelecionado) {
+      this.imagemAtualIndex.update(
+        (i) =>
+          (i - 1 + this.eventoSelecionado!.imagem.length) %
+          this.eventoSelecionado!.imagem.length
+      );
+    }
   }
 }

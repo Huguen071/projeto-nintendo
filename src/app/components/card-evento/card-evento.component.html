@@ -1,13 +1,24 @@
 @if (evento()) {
   <div class="card">
-
-    <img [ngSrc]="evento().imagem" [alt]="evento().titulo" class="card-imagem" width="300" height="200">
-    
+    <div class="carrossel-container">
+      <img
+        [src]="evento().imagem[imagemAtualIndex()]"
+        [alt]="evento().titulo"
+        class="card-imagem"
+        width="300"
+        height="200"
+      />
+      <button class="carrossel-botao anterior" (click)="imagemAnterior()">
+        &#10094;
+      </button>
+      <button class="carrossel-botao proximo" (click)="proximaImagem()">
+        &#10095;
+      </button>
+    </div>
     <div class="card-conteudo">
       <h3 class="card-titulo">{{ evento().titulo }}</h3>
       <p class="card-ano">{{ evento().ano }}</p>
       <p class="card-descricao">{{ evento().descricao }}</p>
     </div>
-    
   </div>
 }

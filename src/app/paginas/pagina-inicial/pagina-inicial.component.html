@@ -36,8 +36,15 @@
 <div class="modal-overlay" *ngIf="eventoSelecionado" (click)="fecharDetalhes()">
   <div class="modal-content" (click)="$event.stopPropagation()">
     <button class="close-button" (click)="fecharDetalhes()">X</button>
-    <img [src]="eventoSelecionado.imagem" [alt]="eventoSelecionado.titulo" class="modal-image">
-    
+    <div class="carrossel-container">
+      <img [src]="eventoSelecionado.imagem[imagemAtualIndex()]" [alt]="eventoSelecionado.titulo" class="modal-image">
+      <button class="carrossel-botao anterior" (click)="imagemAnterior()">
+        &#10094;
+      </button>
+      <button class="carrossel-botao proximo" (click)="proximaImagem()">
+        &#10095;
+      </button>
+    </div>
     <div class="modal-body">
       <h2>{{ eventoSelecionado.titulo }}</h2>
       <p class="modal-year">{{ eventoSelecionado.ano }}</p>
