@@ -1,7 +1,5 @@
 @if (evento()) {
-  <div class="card" 
-       (dblclick)="abrirImagemOriginal()" 
-       title="Dê um duplo clique para ver a imagem original">
+  <div class="card">
 
     <img [ngSrc]="evento().imagem" [alt]="evento().titulo" class="card-imagem" width="300" height="200">
     

@@ -3,9 +3,11 @@ import { PaginaInicialComponente } from './paginas/pagina-inicial/pagina-inicial
 import { LoginComponent } from './paginas/paginas/login/login.component';
 import { HomeComponent } from './paginas/home/home.component';
 import { CadastroComponent } from './paginas/cadastro/cadastro.component';
+import { NovidadesComponent } from './paginas/novidades/novidades.component';
 
 export const routes: Routes = [
 
+     { path: 'novidades', component: NovidadesComponent },
      { path: '', redirectTo: 'home', pathMatch: 'full' },
      { path: 'cadastro', component: CadastroComponent },
      { path: 'home', component: HomeComponent },
