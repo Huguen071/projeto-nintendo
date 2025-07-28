@@ -1,10 +1,28 @@
-<div class="novidades-container">
-  <h1>Fique por dentro das Novidades</h1>
-  <p>Inscreva-se para receber as últimas notícias e atualizações sobre a Nintendo diretamente no seu e-mail.</p>
-  <div *ngIf="isLoggedIn$ | async; else naoLogado">
-    <button (click)="inscrever()" class="inscrever-btn">Inscrever-se para Notificações</button>
-  </div>
-  <ng-template #naoLogado>
-    <p>Você precisa estar <a routerLink="/login">logado</a> para se inscrever.</p>
-  </ng-template>
+<div class="home-container">
+  <header class="cabecalho-home">
+    <h1>Novidades</h1>
+    <p class="p-titulo">Fique por dentro das últimas novidades da Nintendo e cadastre-se para receber atualizações por e-mail.</p>
+    <nav class="navbar-home">
+      <a href="/home">História</a>
+      <a href="/pagina-inicial">Consoles</a>
+      <a href="/novidades">Novidades</a>
+      <a href="/cadastro">Cadastro</a>
+      <a href="/login">Login</a>
+    </nav>
+  </header>
+
+  <main class="conteudo-home">
+    <section id="fundacao">
+      <h2>Cadastre-se para receber as novidades</h2>
+      <p>Gostaria de receber um e-mail sempre que houver uma novidade da Nintendo? Cadastre-se abaixo e enviaremos um e-mail de confirmação para você.</p>
+      
+      <form>
+        <div class="form-group">
+          <label for="email">Seu e-mail:</label>
+          <input type="email" id="email" name="email" required>
+        </div>
+        <button type="submit">Cadastrar</button>
+      </form>
+    </section>
+  </main>
 </div>

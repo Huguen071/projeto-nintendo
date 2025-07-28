@@ -1,0 +1,8 @@
+<div class="user-profile-container" (click)="toggleMenu()">
+  <img src="https://i.pravatar.cc/40" alt="User Profile" class="profile-icon">
+  <div class="dropdown-menu" *ngIf="isMenuOpen">
+    <a routerLink="/perfil">Perfil</a>
+    <a routerLink="/notificacoes">Notificações</a>
+    <a routerLink="/logout">Log Out</a>
+  </div>
+</div>
