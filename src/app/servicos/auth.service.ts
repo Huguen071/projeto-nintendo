@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { BehaviorSubject } from 'rxjs';
+import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged, signOut, sendEmailVerification, updateProfile } from "firebase/auth";
 import { User } from '../modelos/user';
 
 @Injectable({
@@ -9,54 +10,62 @@ import { User } from '../modelos/user';
 export class AuthService {
   private loggedIn = new BehaviorSubject<boolean>(false);
   isLoggedIn = this.loggedIn.asObservable();
+  private currentUser = new BehaviorSubject<User | null>(null);
+  currentUser$ = this.currentUser.asObservable();
 
   constructor(private router: Router) {
-    const token = localStorage.getItem('user');
-    if (token) {
-      this.loggedIn.next(true);
-    }
-  }
-
-  register(user: User) {
-    const users = JSON.parse(localStorage.getItem('users') || '[]');
-    users.push(user);
-    localStorage.setItem('users', JSON.stringify(users));
-    alert('Cadastro realizado com sucesso!');
-    this.router.navigate(['/login']);
-  }
-
-  login(user: User): boolean {
-    const users = JSON.parse(localStorage.getItem('users') || '[]');
-    const foundUser = users.find((u: User) => u.username === user.username && u.password === user.password);
-    if (foundUser) {
-      localStorage.setItem('user', JSON.stringify(foundUser));
-      this.loggedIn.next(true);
-      this.router.navigate(['/pagina-inicial']);
-      return true;
-    }
-    alert('Usuário ou senha inválidos!');
-    return false;
-  }
-
-  logout() {
-    localStorage.removeItem('user');
-    this.loggedIn.next(false);
-    this.router.navigate(['/login']);
-  }
-
-  inscreverParaNotificacoes(): void {
-    const user = JSON.parse(localStorage.getItem('user') || '{}');
-    if (user.email) {
-      const notificacoes = JSON.parse(localStorage.getItem('notificacoes') || '[]');
-      if (!notificacoes.includes(user.email)) {
-        notificacoes.push(user.email);
-        localStorage.setItem('notificacoes', JSON.stringify(notificacoes));
-        alert('Você se inscreveu para receber notificações!');
+    const auth = getAuth();
+    onAuthStateChanged(auth, (user) => {
+      if (user) {
+        this.loggedIn.next(true);
+        this.currentUser.next({ uid: user.uid, email: user.email, displayName: user.displayName });
       } else {
-        alert('Você já está inscrito para receber notificações.');
+        this.loggedIn.next(false);
+        this.currentUser.next(null);
       }
-    } else {
-      alert('Você precisa estar logado para se inscrever.');
+    });
+  }
+
+  async register(user: User) {
+    const auth = getAuth();
+    if (!user.email || !user.password || !user.displayName) {
+      alert('Nome, e-mail e senha são obrigatórios.');
+      return;
+    }
+    try {
+      const userCredential = await createUserWithEmailAndPassword(auth, user.email, user.password);
+      await updateProfile(userCredential.user, {
+        displayName: user.displayName
+      });
+      await sendEmailVerification(userCredential.user);
+      alert('Cadastro realizado com sucesso! Um e-mail de verificação foi enviado.');
+      this.router.navigate(['/login']);
+    } catch (error) {
+      alert(`Erro no cadastro: ${error}`);
+    }
+  }
+
+  async login(user: User) {
+    const auth = getAuth();
+    if (!user.email || !user.password) {
+      alert('Email e senha são obrigatórios.');
+      return;
+    }
+    try {
+      await signInWithEmailAndPassword(auth, user.email, user.password);
+      this.router.navigate(['/pagina-inicial']);
+    } catch (error) {
+      alert(`Erro no login: ${error}`);
+    }
+  }
+
+  async logout() {
+    const auth = getAuth();
+    try {
+      await signOut(auth);
+      this.router.navigate(['/login']);
+    } catch (error) {
+      alert(`Erro ao sair: ${error}`);
     }
   }
 }

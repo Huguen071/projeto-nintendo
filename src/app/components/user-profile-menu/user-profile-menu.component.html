@@ -1,8 +1,14 @@
 <div class="user-profile-container" (click)="toggleMenu()">
-  <img src="https://i.pravatar.cc/40" alt="User Profile" class="profile-icon">
+  <i class="fas fa-user-circle profile-icon"></i>
   <div class="dropdown-menu" *ngIf="isMenuOpen">
-    <a routerLink="/perfil">Perfil</a>
-    <a routerLink="/notificacoes">Notificações</a>
-    <a routerLink="/logout">Log Out</a>
+    <ng-container *ngIf="isLoggedIn$ | async; else guestMenu">
+      <a routerLink="/perfil">Perfil</a>
+      <a routerLink="/notificacoes">Notificações</a>
+      <a (click)="logout()">Log Out</a>
+    </ng-container>
+    <ng-template #guestMenu>
+      <a routerLink="/login">Login</a>
+      <a routerLink="/cadastro">Cadastre-se</a>
+    </ng-template>
   </div>
 </div>

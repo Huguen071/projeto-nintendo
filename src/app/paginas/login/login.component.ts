@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core'; // Adicione OnInit
+import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { AuthService } from '../../servicos/auth.service';
@@ -12,40 +12,26 @@ import { RouterModule } from '@angular/router';
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
-export class LoginComponent implements OnInit { // Implemente OnInit
+export class LoginComponent implements OnInit {
   user: User = {};
-  rememberMe: boolean = false; // Propriedade para o checkbox
+  rememberMe: boolean = false;
 
   constructor(private authService: AuthService) { }
 
   ngOnInit(): void {
-    // Ao iniciar o componente, verifica se há um usuário salvo no localStorage
-    const rememberedUser = localStorage.getItem('rememberedUser');
-    if (rememberedUser) {
-      console.log('Usuário salvo encontrado. Preenchendo formulário.');
-      this.user.username = JSON.parse(rememberedUser).username;
-      // Por segurança, geralmente não preenchemos a senha automaticamente.
-      // this.user.password = JSON.parse(rememberedUser).password;
+    const rememberedEmail = localStorage.getItem('rememberedEmail');
+    if (rememberedEmail) {
+      this.user.email = rememberedEmail;
       this.rememberMe = true;
     }
   }
 
   login() {
-    // Tentativa de login através do serviço de autenticação
-    if (this.authService.login(this.user)) {
-      // Se o login for bem-sucedido:
-      if (this.rememberMe) {
-        // E "Lembrar de mim" estiver marcado, salva o nome de usuário.
-        console.log('Salvando usuário para próxima visita.');
-        localStorage.setItem('rememberedUser', JSON.stringify({ username: this.user.username }));
-      } else {
-        // Se não estiver marcado, remove qualquer usuário que possa estar salvo.
-        console.log('Removendo usuário salvo.');
-        localStorage.removeItem('rememberedUser');
-      }
+    this.authService.login(this.user);
+    if (this.rememberMe) {
+      localStorage.setItem('rememberedEmail', this.user.email || '');
     } else {
-      // Se o login falhar, você pode limpar o campo de senha
-      this.user.password = '';
+      localStorage.removeItem('rememberedEmail');
     }
   }
 }

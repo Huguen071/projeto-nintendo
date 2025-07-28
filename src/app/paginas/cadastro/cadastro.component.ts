@@ -1,15 +1,14 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms'; // Importe o FormsModule
+import { FormsModule } from '@angular/forms';
 import { AuthService } from '../../servicos/auth.service';
 import { User } from '../../modelos/user';
 import { RouterModule } from '@angular/router';
 
-
 @Component({
   selector: 'app-cadastro',
   standalone: true,
-  imports: [CommonModule, FormsModule, RouterModule], // Adicione FormsModule e RouterModule aos imports
+  imports: [CommonModule, FormsModule, RouterModule],
   templateUrl: './cadastro.component.html',
   styleUrls: ['./cadastro.component.css']
 })
@@ -20,10 +19,10 @@ export class CadastroComponent {
   constructor(private authService: AuthService) {}
 
   cadastrar() {
-    if (this.user.username && this.user.email && this.user.password) {
-      this.authService.register(this.user);
+    if (!this.lgpdAccepted) {
+      alert('Você precisa aceitar os termos de uso e a política de privacidade.');
       return;
     }
-    console.log('Tentativa de cadastro');
+    this.authService.register(this.user);
   }
 }

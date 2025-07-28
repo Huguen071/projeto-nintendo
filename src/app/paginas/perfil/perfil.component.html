@@ -1,10 +1,11 @@
-<div class="perfil-container">
+<div class="perfil-container" *ngIf="user">
   <h2>Meu Perfil</h2>
-  <p>Aqui você poderá editar suas informações de perfil, adicionar uma foto e uma biografia.</p>
-  <form>
+  <p>Olá, {{ user?.displayName || 'usuário' }}! Aqui você pode editar suas informações.</p>
+  
+  <form (ngSubmit)="salvarPerfil()">
     <div class="form-group">
-      <label for="nome">Nome:</label>
-      <input type="text" id="nome" name="nome" value="Nome do Usuário">
+      <label for="displayName">Nome:</label>
+      <input type="text" id="displayName" name="displayName" [(ngModel)]="user.displayName" required>
     </div>
     <div class="form-group">
       <label for="foto">Foto de Perfil:</label>
@@ -12,7 +13,7 @@
     </div>
     <div class="form-group">
       <label for="biografia">Biografia:</label>
-      <textarea id="biografia" name="biografia" rows="5">Escreva algo sobre você...</textarea>
+      <textarea id="biografia" name="biografia" rows="5" [(ngModel)]="user.bio">Escreva algo sobre você...</textarea>
     </div>
     <button type="submit">Salvar Alterações</button>
   </form>
