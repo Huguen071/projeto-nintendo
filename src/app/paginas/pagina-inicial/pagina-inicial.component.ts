@@ -5,11 +5,12 @@ import { EventoHistorico } from '../../modelos/evento-historico';
 import { FormsModule } from '@angular/forms';
 import { DadosHistoricosService } from '../../servicos/dados-historicos.service';
 import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-pagina-inicial',
   standalone: true,
-  imports: [CardEventoComponent, FormsModule, CommonModule],
+  imports: [CardEventoComponent, FormsModule, CommonModule, RouterModule],
   templateUrl: './pagina-inicial.component.html',
   styleUrls: ['./pagina-inicial.component.css'],
   changeDetection: ChangeDetectionStrategy.OnPush,

@@ -1,6 +1,6 @@
 import { Routes } from '@angular/router';
 import { PaginaInicialComponente } from './paginas/pagina-inicial/pagina-inicial.component';
-import { LoginComponent } from './paginas/paginas/login/login.component';
+import { LoginComponent } from './paginas/login/login.component';
 import { HomeComponent } from './paginas/home/home.component';
 import { CadastroComponent } from './paginas/cadastro/cadastro.component';
 import { NovidadesComponent } from './paginas/novidades/novidades.component';

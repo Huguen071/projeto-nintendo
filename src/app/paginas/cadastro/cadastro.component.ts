@@ -3,12 +3,13 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms'; // Importe o FormsModule
 import { AuthService } from '../../servicos/auth.service';
 import { User } from '../../modelos/user';
+import { RouterModule } from '@angular/router';
 
 
 @Component({
   selector: 'app-cadastro',
   standalone: true,
-  imports: [CommonModule, FormsModule], // Adicione FormsModule aos imports
+  imports: [CommonModule, FormsModule, RouterModule], // Adicione FormsModule e RouterModule aos imports
   templateUrl: './cadastro.component.html',
   styleUrls: ['./cadastro.component.css']
 })

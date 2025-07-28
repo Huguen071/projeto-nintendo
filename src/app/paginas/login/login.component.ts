@@ -1,13 +1,14 @@
 import { Component, OnInit } from '@angular/core'; // Adicione OnInit
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { AuthService } from '../../../servicos/auth.service'; // Verifique o caminho
-import { User } from '../../../modelos/user'; // Verifique o caminho
+import { AuthService } from '../../servicos/auth.service';
+import { User } from '../../modelos/user';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-login',
   standalone: true,
-  imports: [CommonModule, FormsModule],
+  imports: [CommonModule, FormsModule, RouterModule],
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
