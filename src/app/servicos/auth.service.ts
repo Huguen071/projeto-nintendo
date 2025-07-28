@@ -43,4 +43,20 @@ export class AuthService {
     this.loggedIn.next(false);
     this.router.navigate(['/login']);
   }
+
+  inscreverParaNotificacoes(): void {
+    const user = JSON.parse(localStorage.getItem('user') || '{}');
+    if (user.email) {
+      const notificacoes = JSON.parse(localStorage.getItem('notificacoes') || '[]');
+      if (!notificacoes.includes(user.email)) {
+        notificacoes.push(user.email);
+        localStorage.setItem('notificacoes', JSON.stringify(notificacoes));
+        alert('Você se inscreveu para receber notificações!');
+      } else {
+        alert('Você já está inscrito para receber notificações.');
+      }
+    } else {
+      alert('Você precisa estar logado para se inscrever.');
+    }
+  }
 }

@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, inject, OnInit, signal } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject, OnInit, OnDestroy, signal } from '@angular/core';
 import { CardEventoComponent } from '../../components/card-evento/card-evento.component';
 import { animacaoSlideIn } from '../../animacoes';
 import { EventoHistorico } from '../../modelos/evento-historico';
@@ -15,17 +15,22 @@ import { CommonModule } from '@angular/common';
   changeDetection: ChangeDetectionStrategy.OnPush,
   animations: [animacaoSlideIn]
 })
-export class PaginaInicialComponente implements OnInit {
+export class PaginaInicialComponente implements OnInit, OnDestroy {
   private dadosHistoricosService = inject(DadosHistoricosService);
   todosEventos: EventoHistorico[] = [];
   historiaFiltrada: EventoHistorico[] = [];
   termoBusca: string = '';
   eventoSelecionado: EventoHistorico | null = null;
   imagemAtualIndex = signal(0);
+  intervalo: any;
 
   ngOnInit(): void {
     this.todosEventos = this.dadosHistoricosService.getEventos()();
     this.aplicarFiltrosEOrdenar();
+  }
+
+  ngOnDestroy(): void {
+    this.limparIntervalo();
   }
 
   aplicarFiltrosEOrdenar(): void {
@@ -45,10 +50,18 @@ export class PaginaInicialComponente implements OnInit {
   selecionarEvento(evento: EventoHistorico): void {
     this.eventoSelecionado = evento;
     this.imagemAtualIndex.set(0);
+    this.iniciarCarrossel();
   }
 
   fecharDetalhes(): void {
     this.eventoSelecionado = null;
+    this.limparIntervalo();
+  }
+
+  iniciarCarrossel() {
+    this.intervalo = setInterval(() => {
+      this.proximaImagem();
+    }, 3000);
   }
 
   proximaImagem() {
@@ -57,6 +70,7 @@ export class PaginaInicialComponente implements OnInit {
         (i) => (i + 1) % this.eventoSelecionado!.imagem.length
       );
     }
+    this.reiniciarCarrossel();
   }
 
   imagemAnterior() {
@@ -67,5 +81,17 @@ export class PaginaInicialComponente implements OnInit {
           this.eventoSelecionado!.imagem.length
       );
     }
+    this.reiniciarCarrossel();
+  }
+
+  limparIntervalo() {
+    if (this.intervalo) {
+      clearInterval(this.intervalo);
+    }
+  }
+
+  reiniciarCarrossel() {
+    this.limparIntervalo();
+    this.iniciarCarrossel();
   }
 }

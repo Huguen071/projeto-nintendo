@@ -1,1 +1,10 @@
-<p>novidades works!</p>
+<div class="novidades-container">
+  <h1>Fique por dentro das Novidades</h1>
+  <p>Inscreva-se para receber as últimas notícias e atualizações sobre a Nintendo diretamente no seu e-mail.</p>
+  <div *ngIf="isLoggedIn$ | async; else naoLogado">
+    <button (click)="inscrever()" class="inscrever-btn">Inscrever-se para Notificações</button>
+  </div>
+  <ng-template #naoLogado>
+    <p>Você precisa estar <a routerLink="/login">logado</a> para se inscrever.</p>
+  </ng-template>
+</div>
