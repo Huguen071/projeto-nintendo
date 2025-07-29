@@ -126,3 +126,12 @@
 }
 
 /* O resto do seu CSS de cadastro pode continuar como está */
+
+.senha-min {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-size: 0.8rem;
+  color: #495057;
+  text-align: left;
+  margin-bottom: 3%;
+  margin-top: -3%;
+}

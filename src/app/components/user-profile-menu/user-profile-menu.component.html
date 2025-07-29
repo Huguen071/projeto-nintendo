@@ -2,7 +2,9 @@
   <i class="fas fa-user-circle profile-icon"></i>
   <div class="dropdown-menu" *ngIf="isMenuOpen">
     <ng-container *ngIf="isLoggedIn$ | async; else guestMenu">
-      <a routerLink="/perfil">Perfil</a>
+      <a routerLink="/home">História</a>
+      <a routerLink="/pagina-inicial">Consoles</a>
+      <a routerLink="/novidades">Novidades</a>
       <a routerLink="/notificacoes">Notificações</a>
       <a (click)="logout()">Log Out</a>
     </ng-container>
