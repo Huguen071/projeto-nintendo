@@ -1,9 +1,17 @@
-// Substitua pelos detalhes do seu projeto Firebase
+// Import the functions you need from the SDKs you need
+import { initializeApp } from "firebase/app";
+import { getAnalytics } from "firebase/analytics";
+
 export const firebaseConfig = {
-  apiKey: "SUA_API_KEY",
-  authDomain: "SEU_AUTH_DOMAIN",
-  projectId: "SEU_PROJECT_ID",
-  storageBucket: "SEU_STORAGE_BUCKET",
-  messagingSenderId: "SEU_MESSAGING_SENDER_ID",
-  appId: "SEU_APP_ID"
+  apiKey: "AIzaSyAJnMTJCBFyYznlq7u9Qpy4emSuR1vT7hg",
+  authDomain: "projeto-nintendo.firebaseapp.com",
+  projectId: "projeto-nintendo",
+  storageBucket: "projeto-nintendo.firebasestorage.app",
+  messagingSenderId: "854790139137",
+  appId: "1:854790139137:web:91a22222dafb28a7987f00",
+  measurementId: "G-09SH2GV59G"
 };
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+const analytics = getAnalytics(app);

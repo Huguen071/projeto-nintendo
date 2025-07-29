@@ -1,8 +1,7 @@
-import { Component, inject, OnInit, OnDestroy } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { AuthService } from '../../servicos/auth.service';
-import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-user-profile-menu',
@@ -11,23 +10,10 @@ import { Subscription } from 'rxjs';
   templateUrl: './user-profile-menu.component.html',
   styleUrls: ['./user-profile-menu.component.css']
 })
-export class UserProfileMenuComponent implements OnInit, OnDestroy {
+export class UserProfileMenuComponent {
   authService = inject(AuthService);
-  isLoggedIn = false;
+  isLoggedIn$ = this.authService.isLoggedIn; // Mantenha apenas esta linha para o status de login
   isMenuOpen = false;
-  private authSubscription: Subscription | undefined;
-
-  ngOnInit(): void {
-    this.authSubscription = this.authService.isLoggedIn.subscribe(status => {
-      this.isLoggedIn = status;
-      // Fecha o menu se o estado de login mudar (ex: após o logout)
-      this.isMenuOpen = false; 
-    });
-  }
-
-  ngOnDestroy(): void {
-    this.authSubscription?.unsubscribe();
-  }
 
   toggleMenu() {
     this.isMenuOpen = !this.isMenuOpen;
@@ -35,5 +21,6 @@ export class UserProfileMenuComponent implements OnInit, OnDestroy {
 
   logout() {
     this.authService.logout();
+    this.isMenuOpen = false; // Fecha o menu ao fazer logout
   }
 }

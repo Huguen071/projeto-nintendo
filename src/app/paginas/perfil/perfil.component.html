@@ -1,6 +1,6 @@
 <div class="perfil-container" *ngIf="user">
   <h2>Meu Perfil</h2>
-  <p>Olá, {{ user?.displayName || 'usuário' }}! Aqui você pode editar suas informações.</p>
+  <p>Olá, {{ user.displayName || 'usuário' }}! Aqui você pode editar suas informações.</p>
   
   <form (ngSubmit)="salvarPerfil()">
     <div class="form-group">

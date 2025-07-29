@@ -18,7 +18,10 @@ export class AuthService {
     onAuthStateChanged(auth, (user) => {
       if (user) {
         this.loggedIn.next(true);
-        this.currentUser.next({ uid: user.uid, email: user.email, displayName: user.displayName });
+        this.currentUser.next({ uid: user.uid, 
+          email: user.email ?? undefined,
+          displayName: user.displayName ?? undefined
+        });
       } else {
         this.loggedIn.next(false);
         this.currentUser.next(null);

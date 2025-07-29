@@ -15,6 +15,7 @@ export class NovidadesComponent {
   isLoggedIn$ = this.authService.isLoggedIn;
 
   inscrever() {
-    this.authService.inscreverParaNotificacoes();
+    //this.authService.inscreverParaNotificacoes();
+    alert('Funcionalidade de inscrição ainda não implementada.');
   }
 }
