@@ -34,4 +34,12 @@ export class LoginComponent implements OnInit {
       localStorage.removeItem('rememberedEmail');
     }
   }
+
+  esqueciSenha() {
+    if (!this.user.email) {
+      alert('Por favor, digite seu e-mail para redefinir a senha.');
+      return;
+    }
+    this.authService.sendPasswordResetEmail(this.user.email);
+  }
 }

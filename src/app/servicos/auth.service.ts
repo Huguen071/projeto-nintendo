@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { BehaviorSubject } from 'rxjs';
-import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged, signOut, sendEmailVerification, updateProfile } from "firebase/auth";
+import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged, signOut, sendEmailVerification, updateProfile, sendPasswordResetEmail } from "firebase/auth";
 import { User } from '../modelos/user';
 
 @Injectable({
@@ -69,6 +69,16 @@ export class AuthService {
       this.router.navigate(['/login']);
     } catch (error) {
       alert(`Erro ao sair: ${error}`);
+    }
+  }
+
+  async sendPasswordResetEmail(email: string) {
+    const auth = getAuth();
+    try {
+      await sendPasswordResetEmail(auth, email);
+      alert('Um e-mail para redefinição de senha foi enviado para ' + email);
+    } catch (error) {
+      alert(`Erro ao enviar e-mail de redefinição de senha: ${error}`);
     }
   }
 }

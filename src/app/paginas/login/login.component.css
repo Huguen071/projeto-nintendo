@@ -98,6 +98,15 @@ h2 {
   cursor: pointer;
 }
 
+.link-esqueci-senha {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-size: 0.8rem;
+  color: #495057;
+  text-align: left;
+  margin-top: 0%;
+  margin-bottom: 5%;
+}
+
 .link-cadastro {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   font-size: 0.8rem;
