@@ -3,6 +3,7 @@ import { provideRouter } from '@angular/router';
 import { provideAnimations } from '@angular/platform-browser/animations';
 import { initializeApp } from "firebase/app";
 import { getAuth } from "firebase/auth";
+import { provideHttpClient } from '@angular/common/http';
 
 import { routes } from './app.routes';
 import { firebaseConfig } from '../environments/firebase-config';
@@ -17,6 +18,7 @@ export const aplicativoConfig: ApplicationConfig = {
     provideZoneChangeDetection({ eventCoalescing: true }),
     provideRouter(routes),
     provideAnimations(),
+    provideHttpClient(),
     // Forneça a instância do AuthService
     AuthService
   ]

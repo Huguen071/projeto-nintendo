@@ -1,7 +1,7 @@
 <div class="home-container">
   <header class="cabecalho-home">
     <h1>Novidades</h1>
-    <p class="p-titulo">Fique por dentro das últimas novidades no mundo Nintendo</p>
+    <p class="p-titulo">Fique por dentro das últimas notícias do mundo Nintendo</p>
     <nav class="navbar-home">
       <a routerLink="/home">História</a>
       <a routerLink="/pagina-inicial">Consoles</a>
@@ -12,17 +12,29 @@
   </header>
 
   <main class="conteudo-home">
-    <section id="fundacao">
-      <h2>Cadastre-se para receber as novidades</h2>
-      <p>Gostaria de receber um e-mail sempre que houver uma novidade da Nintendo? Cadastre-se abaixo e enviaremos um e-mail de confirmação para você.</p>
-      
-      <form>
-        <div class="form-group">
-          <label for="email">Seu e-mail:</label>
-          <input type="email" id="email" name="email" required>
+    <section class="news-grid-container">
+      @if (carregando()) {
+        <p class="status-message">Carregando notícias...</p>
+      } @else if (erro()) {
+        <p class="status-message error-message">{{ erro() }}</p>
+      } @else if (noticias().length > 0) {
+        <div class="news-grid">
+          @for (noticia of noticias(); track noticia.url) {
+            <div class="news-card">
+              <a [href]="noticia.url" target="_blank" rel="noopener noreferrer">
+                <img [src]="noticia.image" alt="Imagem da notícia" class="news-image" />
+                <div class="news-content">
+                  <h3 class="news-title">{{ noticia.title }}</h3>
+                  <p class="news-source">{{ noticia.source.name }} - {{ noticia.publishedAt | date:'dd/MM/yyyy HH:mm' }}</p>
+                  <p class="news-description">{{ noticia.description }}</p>
+                </div>
+              </a>
+            </div>
+          }
         </div>
-        <button type="submit">Cadastrar</button>
-      </form>
+      } @else {
+        <p class="status-message">Nenhuma notícia encontrada.</p>
+      }
     </section>
   </main>
 </div>
