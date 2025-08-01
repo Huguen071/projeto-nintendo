@@ -1,0 +1,72 @@
+/* Salve em: src/app/paginas/console-detail/console-detail.component.css */
+
+.container {
+  padding-top: 6rem;
+}
+
+.navbar-home {
+  position: absolute;
+  top: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+  text-align: center;
+  padding-bottom: 1rem;
+}
+
+.navbar-home a {
+  font-family: 'Press Start 2P', cursive;
+  text-decoration: none;
+  color: #495057;
+  margin: 0 20px;
+  font-size: 1.25rem;
+  transition: color 0.3s ease-in-out;
+}
+
+.navbar-home a:hover {
+  color: #E60012;
+}
+
+.console-detail-container {
+  padding: 20px;
+  max-width: 800px;
+  margin: 20px auto;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.console-detail-container h1 {
+  font-family: 'Press Start 2P', cursive;
+  color: #E60012;
+  margin-bottom: 10px;
+}
+
+.ano-lancamento {
+  color: #666;
+  font-style: italic;
+  margin-bottom: 20px;
+}
+
+.image-container {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.console-image {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.console-info h2 {
+  font-family: 'Press Start 2P', cursive;
+  color: #333;
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+.console-info p {
+  line-height: 1.6;
+  font-size: 1.1rem;
+}
