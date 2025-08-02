@@ -13,8 +13,8 @@ export class DadosHistoricosService {
       descricao: 'Color TV-Game, lançada exclusivamente no Japão a partir de 1977. Desenvolvida em colaboração com a Mitsubishi Electric, esta foi a primeira incursão da empresa em videogames domésticos. A série consistia em consoles dedicados com jogos embutidos, como o Color TV-Game 6 e o Color TV-Game 15, que ofereciam variações do popular Pong. Modelos posteriores incluíram Racing 112 e Block Kuzushi, um clone de Breakout cujo design externo foi um dos primeiros projetos de Shigeru Miyamoto na empresa. A linha foi um sucesso comercial, vendendo cerca de 3 milhões de unidades no total.',
       imagem: [
         'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjdzJ5rByYTiI7TI29jzCY8KEdoqk4-dijzbBmHRKzQBbGxy1ogPiOQ8myF0kxuvE5tXIdGVGQkgTDcWpcg-ekddLipCcD72cYqdiBma71zFOwLX3WHmzZ6CJBISXKXwhWwgbCq3-jwVcA/w1200-h630-p-k-no-nu/beforemario_dot_com_nintendo_tv_games_01.jpg',
-        'https://placehold.co/600x400/E60012/FFFFFF?text=Color+TV-Game+B',
-        'https://placehold.co/600x400/E60012/FFFFFF?text=Color+TV-Game+C'
+        'https://upload.wikimedia.org/wikipedia/commons/7/78/Color_TV-Game_15_%28Cut_out%29.jpg',
+        'https://i.ebayimg.com/images/g/p44AAOSwA8dnkKMs/s-l400.png'
       ]
     },
     {
@@ -23,8 +23,8 @@ export class DadosHistoricosService {
       descricao: 'Criado por Gunpei Yokoi, esta série de portáteis com um único jogo e um relógio foi um sucesso massivo, introduzindo o D-pad e vendendo mais de 43 milhões de unidades.',
       imagem: [
         'https://i.pinimg.com/736x/c0/02/86/c0028662e0b08bed5e53af7c7457a42f.jpg',
-        'https://placehold.co/600x400/E60012/FFFFFF?text=Game+%26+Watch+B',
-        'https://placehold.co/600x400/E60012/FFFFFF?text=Game+%26+Watch+C'
+        'https://www.nintendo.com/eu/media/images/10_share_images/others_3/H2x1_GameAndWatch_SuperMarioBros_image950w.jpg',
+        'https://i.redd.it/nintendo-lcd-games-v0-4kl449nfgpva1.jpg?width=1600&format=pjpg&auto=webp&s=53d272f3e279abb80017d63dd6e34b60889be930'
       ]
     },
     {
@@ -33,8 +33,8 @@ export class DadosHistoricosService {
       descricao: 'O lançamento do jogo de arcade Donkey Kong, criado por um jovem Shigeru Miyamoto, não só salvou a divisão americana da Nintendo, como também marcou a primeira aparição de Mario. Mario, inicialmente chamado de "Jumpman", foi um sucesso instantâneo, estabelecendo as bases para o futuro da Nintendo no mundo dos jogos. O jogo foi um marco na indústria, introduzindo elementos narrativos e de personagem que se tornariam fundamentais nos jogos subsequentes. Donkey Kong vendeu mais de 132.000 máquinas em todo o mundo, solidificando a reputação da Nintendo como uma força inovadora no setor.',
       imagem: [
         'https://p.turbosquid.com/ts-thumb/y7/klLXnb/mdZEL1D8/r1/jpg/1298780622/300x300/sharp_fit_q85/aed09d03f7ac800923b651570215469e04d804d7/r1.jpg',
-        'https://placehold.co/600x400/E60012/FFFFFF?text=Arcade+Donkey+Kong+B',
-        'https://placehold.co/600x400/E60012/FFFFFF?text=Arcade+Donkey+Kong+C'
+        'https://platform.theverge.com/wp-content/uploads/sites/2/chorus/uploads/chorus_asset/file/11542647/media_1.image_.jpg?quality=90&strip=all&crop=7.8125,0,84.375,100',
+        'https://i.redd.it/3gja4cy53uvb1.jpg'
       ]
     },
     {
@@ -43,8 +43,8 @@ export class DadosHistoricosService {
       descricao: 'Na terceira geração, a Nintendo não apenas lançou um produto, mas reviveu a indústria de videogames norte-americana com o Nintendo Entertainment System (NES), lançado em 1985, dois anos após sua estreia no Japão como Famicom. Liderado por Masayuki Uemura, o projeto foi uma manobra de marketing brilhante para um mercado hostil. O NES foi vendido como um "sistema de entretenimento", acompanhado pelo robô R.O.B. para evitar o estigma dos "videogames". A inclusão do chip de bloqueio 10NES garantiu o controle de qualidade do software, estabelecendo um modelo de negócios lucrativo. Com clássicos como Super Mario Bros., The Legend of Zelda e Metroid, o NES vendeu 61,91 milhões de unidades , superando seus principais concorrentes, o Sega Master System e o Atari 7800.',
       imagem: [
         'https://files.meiobit.com/wp-content/uploads/2013/07/20130715gogoni-famicom.jpg',
-        'https://placehold.co/600x400/E60012/FFFFFF?text=NES+%2F+Famicom+B',
-        'https://placehold.co/600x400/E60012/FFFFFF?text=NES+%2F+Famicom+C'
+        'https://upload.wikimedia.org/wikipedia/commons/9/9e/Nintendo_CLV-101_20170617.jpg',
+        'https://i.ytimg.com/vi/5zUMfNUQZLk/maxresdefault.jpg?sqp=-oaymwEmCIAKENAF8quKqQMa8AEB-AH-CYAC0AWKAgwIABABGFggYShlMA8=&rs=AOn4CLDxaiTL91FwHeu7NZPi4QkEE9XOSw'
       ]
     },
     {
@@ -53,8 +53,8 @@ export class DadosHistoricosService {
       descricao: 'Na quarta geração, o Game Boy, lançado em 1989, foi a obra-prima do designer Gunpei Yokoi. Seguindo a filosofia de "Pensamento Lateral com Tecnologia Gasta", o console usava uma tela monocromática e um processador modesto para garantir um preço baixo e uma vida útil de bateria de até 30 horas. Essa abordagem o tornou um sucesso esmagador contra concorrentes tecnicamente superiores, como o Sega Game Gear e o Atari Lynx. Impulsionado por jogos como Tetris e, mais tarde, Pokémon Red e Blue, o Game Boy (junto com sua versão Color) vendeu 118,69 milhões de unidades.',
       imagem: [
         'https://www.arquivosdowoo.com.br/wp-content/uploads/2019/10/5-Jogo-de-Game-Boy-Pokemon-Arquivos-do-Woo-1140x641.jpg',
-        'https://placehold.co/600x400/E60012/FFFFFF?text=Game+Boy+B',
-        'https://placehold.co/600x400/E60012/FFFFFF?text=Game+Boy+C'
+        'https://www.acasadocogumelo.com/wp-content/uploads/2019/04/dims-1.jpg',
+        'https://platform.polygon.com/wp-content/uploads/sites/2/chorus/uploads/chorus_asset/file/13148823/jbareham_180924_ply0802_0010.jpg?quality=90&strip=all&crop=16.666666666667,0,66.666666666667,100'
       ]
     },
     {
@@ -63,7 +63,7 @@ export class DadosHistoricosService {
       descricao: 'Super Nintendo Entertainment System (SNES), lançado em 1990. Desenvolvido pela equipe de Masayuki Uemura, o SNES tinha uma CPU mais lenta que seu principal concorrente, o Sega Mega Drive/Genesis, mas compensava com chips de áudio e vídeo superiores. Inovações como o "Mode 7" para efeitos pseudo-3D e chips de aprimoramento nos cartuchos, como o Super FX de Star Fox, definiram sua identidade. Com uma biblioteca de jogos aclamados como Super Mario World, The Legend of Zelda: A Link to the Past e Donkey Kong Country, o SNES superou seu rival, vendendo 49,10 milhões de unidades globalmente.',
       imagem: [
         'https://upload.wikimedia.org/wikipedia/commons/8/82/USA-SNES_-_JPN-SuperFamicom.png',
-        'https://placehold.co/600x400/E60012/FFFFFF?text=SNES+%2F+Super+Famicom+B',
+        'https://i.ebayimg.com/thumbs/images/g/ImQAAOSwJU9lYkPc/s-l1200.jpg',
         'https://placehold.co/600x400/E60012/FFFFFF?text=SNES+%2F+Super+Famicom+C'
       ]
     },
