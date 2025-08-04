@@ -73,6 +73,7 @@
   right: 0;
   z-index: 11; /* Z-index maior para ficar na frente de tudo */
   text-align: center;
+  padding: 0 1rem;
 }
 
 .hero-conteudo {
