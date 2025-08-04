@@ -1,3 +1,5 @@
+/* src/app/paginas/pagina-inicial/pagina-inicial.component.css */
+
 /* ======================================= */
 /* ESTRUTURA E LAYOUT PRINCIPAL            */
 /* ======================================= */
@@ -151,7 +153,7 @@
   position: relative;
   width: 50%;
   box-sizing: border-box;
-  height: 480px;
+  /* Altura removida para ser flexível */
 }
 
 .timeline-item:nth-child(odd) {
@@ -252,11 +254,12 @@
 
 .modal-image {
   width: 100%;
-  height: 250px; /* Altura fixa para a imagem */
-  object-fit: cover;
+  height: auto; /* Altura automática para manter a proporção */
+  max-height: 50vh; /* Altura máxima para não ocupar a tela inteira */
+  object-fit: contain; /* Garante que a imagem inteira apareça */
   margin-bottom: 1rem;
   border-radius: 4px;
-  flex-shrink: 0; /* Impede que a imagem seja esmagada */
+  flex-shrink: 0;
 }
 
 /* --- ESTA É A PARTE QUE ADICIONA A BARRA DE ROLAGEM --- */
@@ -283,7 +286,10 @@
 .carrossel-container {
   position: relative;
   width: 100%;
-  height: 250px;
+  background-color: #000; /* Fundo preto para letterboxing */
+  display: flex;
+  align-items: center;
+  justify-content: center;
   flex-shrink: 0;
 }
 
